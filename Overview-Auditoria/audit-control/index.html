@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Audit Control · Visão geral das auditorias</title>
+<meta name="description" content="Painel executivo de auditorias operacionais: acompanhe status, escopo e indicadores de TO, First Mile, Line Haul, NC e Outbound em um único lugar." />
+<meta name="color-scheme" content="dark light" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/variables.css" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+<!-- Sprite de ícones reutilizáveis -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="icon-mark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 3 6v6c0 5.2 3.8 9.7 9 11 5.2-1.3 9-5.8 9-11V6l-9-4Zm-1.2 13.6-3.4-3.4 1.4-1.4 2 2 4.6-4.6 1.4 1.4-6 6Z"/></symbol>
+  <symbol id="icon-grid" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h6v6H4V4Zm10 0h6v6h-6V4ZM4 14h6v6H4v-6Zm10 0h6v6h-6v-6Z"/></symbol>
+  <symbol id="icon-return" viewBox="0 0 24 24"><path fill="currentColor" d="M9 5 4 10l5 5v-3.5c4 0 6.5 1.3 8 4-0.4-4.8-2.9-8.2-8-8.5V5Z"/></symbol>
+  <symbol id="icon-diamond" viewBox="0 0 24 24"><path fill="currentColor" d="m12 3 9 9-9 9-9-9 9-9Z"/></symbol>
+  <symbol id="icon-shuffle" viewBox="0 0 24 24"><path fill="currentColor" d="M16 3h5v5h-2V6.4l-3.6 3.6L14 8.6 17.6 5H16V3ZM3 6h5.5l7 12H21v2h-6.7l-7-12H3V6Zm13 12.6 3.6-3.6H18v-2h5v5h-2v-1.6L17.4 20 16 18.6ZM3 16h4.5l1.2 2H3v-2Z"/></symbol>
+  <symbol id="icon-alert" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3 2 21h20L12 3Zm0 6.5 1 6h-2l1-6ZM11 17h2v2h-2v-2Z"/></symbol>
+  <symbol id="icon-outbound" viewBox="0 0 24 24"><path fill="currentColor" d="M6 6h9.6L6 15.6 7.4 17 17 7.4V17h2V6H6v0Z"/></symbol>
+  <symbol id="icon-sun" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4.5a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v1.5a1 1 0 0 1-1 1Zm0 17a1 1 0 0 1-1-1V19a1 1 0 1 1 2 0v1.5a1 1 0 0 1-1 1ZM4.2 5.6 3.1 4.5a1 1 0 1 1 1.4-1.4l1.1 1.1a1 1 0 0 1-1.4 1.4Zm14.3 14.3-1.1-1.1a1 1 0 0 1 1.4-1.4l1.1 1.1a1 1 0 0 1-1.4 1.4ZM2 13a1 1 0 0 1 0-2h1.5a1 1 0 1 1 0 2H2Zm17 0a1 1 0 0 1 0-2h1.5a1 1 0 1 1 0 2H19ZM4.2 18.4a1 1 0 0 1 0-1.4l1.1-1.1a1 1 0 1 1 1.4 1.4l-1.1 1.1a1 1 0 0 1-1.4 0ZM17.3 5.6a1 1 0 0 1 0-1.4l1.1-1.1a1 1 0 1 1 1.4 1.4l-1.1 1.1a1 1 0 0 1-1.4 0ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></symbol>
+  <symbol id="icon-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M20.7 14.9A8.6 8.6 0 0 1 9.1 3.3a1 1 0 0 0-1.2-1.3A10.5 10.5 0 1 0 22 16.1a1 1 0 0 0-1.3-1.2Z"/></symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24"><path fill="currentColor" d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24"><path fill="currentColor" d="m6.4 5 12.6 12.6-1.4 1.4L5 6.4 6.4 5Zm12.6 0L5.4 17.6 4 16.2 16.6 3.6 19 5Z"/></symbol>
+  <symbol id="icon-refresh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 5V2L8 6l4 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7Z"/></symbol>
+</svg>
+
+<div class="scrim" data-scrim></div>
+
+<div class="app-shell">
+
+  <!-- ============================= SIDEBAR ============================= -->
+  <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
+    <div class="sidebar__brand">
+      <span class="sidebar__mark" aria-hidden="true"><svg width="20" height="20"><use href="#icon-mark"></use></svg></span>
+      <span>
+        <span class="sidebar__brand-name">Audit Control</span>
+        <span class="sidebar__brand-tag">AUDIT &amp; PERFORMANCE</span>
+      </span>
+    </div>
+
+    <nav class="sidebar__group">
+      <p class="sidebar__group-label">AUDITORIAS</p>
+      <ul>
+        <li><button class="nav-link" data-nav="auditoria-to" type="button">
+          <span class="nav-link__icon"><svg width="16" height="16"><use href="#icon-return"></use></svg></span>
+          Auditoria de TO
+        </button></li>
+        <li><button class="nav-link" data-nav="first-mile" type="button">
+          <span class="nav-link__icon"><svg width="16" height="16"><use href="#icon-diamond"></use></svg></span>
+          First Mile
+        </button></li>
+        <li><button class="nav-link" data-nav="line-haul" type="button">
+          <span class="nav-link__icon"><svg width="16" height="16"><use href="#icon-shuffle"></use></svg></span>
+          Line Haul
+        </button></li>
+        <li><button class="nav-link" data-nav="nc" type="button">
+          <span class="nav-link__icon"><svg width="16" height="16"><use href="#icon-alert"></use></svg></span>
+          NC
+        </button></li>
+        <li><button class="nav-link" data-nav="outbound" type="button">
+          <span class="nav-link__icon"><svg width="16" height="16"><use href="#icon-outbound"></use></svg></span>
+          Outbound
+        </button></li>
+      </ul>
+    </nav>
+
+    <nav class="sidebar__group">
+      <p class="sidebar__group-label">GESTÃO</p>
+      <ul>
+        <li><button class="nav-link nav-link--management" data-nav="visao-geral" type="button" aria-current="page">
+          <span class="nav-link__icon"><svg width="16" height="16"><use href="#icon-grid"></use></svg></span>
+          Visão Geral
+        </button></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar__footer">
+      <p class="sidebar__footer-title">SOC RJ2</p>
+      <p class="sidebar__footer-sub">Performance · Qualidade · Auditoria</p>
+    </div>
+  </aside>
+
+  <!-- ============================== MAIN =============================== -->
+  <div class="content">
+    <header class="topbar">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <button class="btn btn--ghost sidebar-toggle" type="button" data-sidebar-open aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false">
+          <svg width="20" height="20"><use href="#icon-menu"></use></svg>
+        </button>
+        <nav class="breadcrumb" aria-label="Trilha de navegação">
+          <span>Central</span>
+          <span aria-hidden="true">/</span>
+          <span class="breadcrumb__current" data-breadcrumb>Visão Geral</span>
+        </nav>
+      </div>
+
+      <div class="topbar__actions">
+        <button class="btn" type="button" data-refresh>
+          <svg class="btn__icon" width="16" height="16"><use href="#icon-refresh"></use></svg>
+          Gestão Operacional
+        </button>
+        <button class="btn theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+          <svg class="theme-toggle__icon" width="15" height="15" data-theme-icon><use href="#icon-sun"></use></svg>
+          <span data-theme-label>Modo claro</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content">
+
+      <!-- ======================= VISÃO GERAL (view) ======================= -->
+      <section class="view view--active" id="view-visao-geral" data-view="visao-geral" aria-labelledby="visao-geral-title">
+
+        <div class="page-head">
+          <div>
+            <h1 class="page-head__title" id="visao-geral-title">Visão Geral</h1>
+            <p class="page-head__subtitle">Consolidado de todas as auditorias · Report D-1</p>
+          </div>
+          <div class="page-head__meta">
+            <span class="badge badge--success"><span class="badge__dot"></span>Base atualizada</span>
+            <span class="badge badge--success"><span class="badge__dot"></span>Base atualizada</span>
+            <span class="badge badge--outline" data-report-date>D-1 · 11/08/2026</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section__header">
+            <div>
+              <p class="section__eyebrow">Audit Control · Visão executiva</p>
+              <h2 class="section__title">Panorama das auditorias</h2>
+              <p class="section__desc">Acompanhamento rápido do status, escopo e principal indicador de cada frente.</p>
+            </div>
+            <span class="badge badge--outline" data-report-date>D-1 · 11/08/2026</span>
+          </div>
+
+          <div class="card-grid" id="panorama-grid" aria-live="polite">
+            <!-- Cards renderizados via JS a partir de js/data.js -->
+          </div>
+        </div>
+
+        <p class="governance-bar">
+          <svg width="16" height="16" style="margin-top:2px; color:var(--brand-500)"><use href="#icon-alert"></use></svg>
+          <span><strong>Nota de governança:</strong> somente a Auditoria de TO possui números preenchidos na base fornecida. As demais auditorias permanecem estruturadas para receber seus indicadores, sem criação de dados fictícios.</span>
+        </p>
+      </section>
+
+      <!-- ====================== AUDITORIA DE TO (view) ===================== -->
+      <section class="view" id="view-auditoria-to" data-view="auditoria-to" aria-labelledby="auditoria-to-title">
+
+        <div class="page-head">
+          <div>
+            <h1 class="page-head__title" id="auditoria-to-title">Auditoria de TO</h1>
+            <p class="page-head__subtitle">CBS &amp; Esteiras · Packed · Report D-1</p>
+          </div>
+          <div class="page-head__meta">
+            <span class="badge badge--success"><span class="badge__dot"></span>Base atualizada</span>
+            <span class="badge badge--success"><span class="badge__dot"></span>Base atualizada</span>
+            <span class="badge badge--outline">D-1 · 11/08/2026</span>
+          </div>
+        </div>
+
+        <form class="filter-bar" aria-label="Filtros do relatório" data-filter-form>
+          <div class="field">
+            <label class="field__label" for="filter-data">DATA</label>
+            <input class="field__control" type="date" id="filter-data" value="2026-08-11" />
+          </div>
+          <div class="field field--select">
+            <label class="field__label" for="filter-semana">SEMANA</label>
+            <select class="field__control" id="filter-semana">
+              <option>Semana 33 · 2026</option>
+              <option>Semana 32 · 2026</option>
+              <option>Semana 31 · 2026</option>
+            </select>
+          </div>
+          <div class="filter-summary">Visão: D-1 · Consolidado da auditoria selecionada</div>
+          <div class="filter-summary" style="text-align:right;">Atualizado: <strong data-updated-at>11/08/2026</strong></div>
+        </form>
+
+        <div class="kpi-row" id="kpi-row" aria-live="polite">
+          <!-- KPIs renderizados via JS -->
+        </div>
+
+        <div class="detail-grid">
+          <div class="panel">
+            <div class="panel__head">
+              <div>
+                <h2 class="panel__title">Performance operacional por área</h2>
+                <p class="panel__desc">Volume auditado × taxa de erro</p>
+              </div>
+              <span class="badge badge--outline">D-1</span>
+            </div>
+
+            <div id="area-list">
+              <!-- Linhas renderizadas via JS -->
+            </div>
+
+            <p class="panel__footnote" data-asm-footnote>ASM · 86.808 pacotes · 1.191 TO's · 1.937 erros</p>
+          </div>
+
+          <aside class="panel" aria-label="Prioridades gerenciais">
+            <div class="panel__head">
+              <div>
+                <h2 class="panel__title">Prioridades gerenciais</h2>
+                <p class="panel__desc">Sinais para direcionamento de ação</p>
+              </div>
+            </div>
+            <ul class="priority-list" id="priority-list">
+              <!-- Itens renderizados via JS -->
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ============ Frentes ainda sem dados (template reutilizável) ======= -->
+      <section class="view" id="view-first-mile" data-view="first-mile" aria-labelledby="first-mile-title">
+        <div class="page-head">
+          <div>
+            <h1 class="page-head__title" id="first-mile-title">Auditoria de First Mile</h1>
+            <p class="page-head__subtitle">First Mile · Coleta e entrada · Report D-1</p>
+          </div>
+          <span class="badge badge--outline">Estruturada</span>
+        </div>
+        <div class="empty-state">
+          <div class="empty-state__icon"><svg width="20" height="20"><use href="#icon-diamond"></use></svg></div>
+          <p class="empty-state__title">Indicador pendente</p>
+          <p class="empty-state__desc">Esta auditoria está estruturada para receber dados, mas nenhum indicador foi informado na base atual.</p>
+        </div>
+      </section>
+
+      <section class="view" id="view-line-haul" data-view="line-haul" aria-labelledby="line-haul-title">
+        <div class="page-head">
+          <div>
+            <h1 class="page-head__title" id="line-haul-title">Auditoria de Line Haul</h1>
+            <p class="page-head__subtitle">Line Haul · Transferências e transporte · Report D-1</p>
+          </div>
+          <span class="badge badge--outline">Estruturada</span>
+        </div>
+        <div class="empty-state">
+          <div class="empty-state__icon"><svg width="20" height="20"><use href="#icon-shuffle"></use></svg></div>
+          <p class="empty-state__title">Indicador pendente</p>
+          <p class="empty-state__desc">Esta auditoria está estruturada para receber dados, mas nenhum indicador foi informado na base atual.</p>
+        </div>
+      </section>
+
+      <section class="view" id="view-nc" data-view="nc" aria-labelledby="nc-title">
+        <div class="page-head">
+          <div>
+            <h1 class="page-head__title" id="nc-title">Auditoria de NC</h1>
+            <p class="page-head__subtitle">Não Conformidades · Qualidade · Report D-1</p>
+          </div>
+          <span class="badge badge--outline">Estruturada</span>
+        </div>
+        <div class="empty-state">
+          <div class="empty-state__icon"><svg width="20" height="20"><use href="#icon-alert"></use></svg></div>
+          <p class="empty-state__title">Indicador pendente</p>
+          <p class="empty-state__desc">Esta auditoria está estruturada para receber dados, mas nenhum indicador foi informado na base atual.</p>
+        </div>
+      </section>
+
+      <section class="view" id="view-outbound" data-view="outbound" aria-labelledby="outbound-title">
+        <div class="page-head">
+          <div>
+            <h1 class="page-head__title" id="outbound-title">Auditoria de Outbound</h1>
+            <p class="page-head__subtitle">Outbound · Expedição · Report D-1</p>
+          </div>
+          <span class="badge badge--outline">Estruturada</span>
+        </div>
+        <div class="empty-state">
+          <div class="empty-state__icon"><svg width="20" height="20"><use href="#icon-outbound"></use></svg></div>
+          <p class="empty-state__title">Indicador pendente</p>
+          <p class="empty-state__desc">Esta auditoria está estruturada para receber dados, mas nenhum indicador foi informado na base atual.</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span class="toast__dot" aria-hidden="true"></span>
+  <span data-toast-text>Base atualizada com sucesso</span>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/render.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

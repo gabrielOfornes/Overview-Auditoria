@@ -1,0 +1,120 @@
+/* ==========================================================================
+   Design Tokens — Audit Control
+   Tema escuro é o padrão; o tema claro sobrescreve via [data-theme="light"]
+   ========================================================================== */
+
+:root {
+  /* ---- Cor de marca ---- */
+  --brand-500: #ff5a36;
+  --brand-600: #ea4324;
+  --brand-700: #c8351a;
+  --brand-050: #ff5a361a;
+
+  /* ---- Semânticas de status ---- */
+  --status-success: #35c17a;
+  --status-success-bg: #35c17a1f;
+  --status-danger: #ff5a5a;
+  --status-danger-bg: #ff5a5a1f;
+  --status-warning: #f2b84b;
+  --status-warning-bg: #f2b84b1f;
+  --status-neutral: #8892a4;
+  --status-neutral-bg: #8892a41f;
+
+  /* ---- Tipografia ---- */
+  --font-display: "Sora", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --fs-2xs: 0.6875rem;   /* 11px */
+  --fs-xs: 0.75rem;      /* 12px */
+  --fs-sm: 0.8125rem;    /* 13px */
+  --fs-base: 0.9375rem;  /* 15px */
+  --fs-md: 1.0625rem;    /* 17px */
+  --fs-lg: 1.375rem;     /* 22px */
+  --fs-xl: 1.75rem;      /* 28px */
+  --fs-2xl: 2.5rem;      /* 40px */
+
+  --lh-tight: 1.15;
+  --lh-normal: 1.5;
+
+  /* ---- Espaçamento ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 3.5rem;
+
+  /* ---- Raio e bordas ---- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* ---- Sombra ---- */
+  --shadow-card: 0 1px 0 rgba(0, 0, 0, 0.4), 0 12px 24px -16px rgba(0, 0, 0, 0.6);
+  --shadow-pop: 0 20px 45px -20px rgba(0, 0, 0, 0.65);
+
+  /* ---- Transições ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 360ms;
+
+  /* ---- Layout ---- */
+  --sidebar-w: 248px;
+  --header-h: 64px;
+  --content-max: 1320px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Tema escuro (padrão)                                                    */
+/* ---------------------------------------------------------------------- */
+:root,
+[data-theme="dark"] {
+  --bg-canvas: #0a0c11;
+  --bg-sidebar: #0d0f15;
+  --bg-surface: #12151c;
+  --bg-surface-raised: #171a23;
+  --bg-surface-hover: #1c1f29;
+  --bg-inset: #0e1016;
+
+  --border-subtle: #ffffff12;
+  --border-default: #ffffff1a;
+  --border-strong: #ffffff2b;
+
+  --text-primary: #f4f5f7;
+  --text-secondary: #a6adba;
+  --text-tertiary: #6c7484;
+  --text-on-brand: #ffffff;
+
+  --scrollbar-thumb: #2a2e39;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Tema claro                                                              */
+/* ---------------------------------------------------------------------- */
+[data-theme="light"] {
+  --bg-canvas: #f3f4f7;
+  --bg-sidebar: #ffffff;
+  --bg-surface: #ffffff;
+  --bg-surface-raised: #ffffff;
+  --bg-surface-hover: #f2f3f6;
+  --bg-inset: #f6f7f9;
+
+  --border-subtle: #0b0d1210;
+  --border-default: #0b0d121a;
+  --border-strong: #0b0d1233;
+
+  --text-primary: #12141a;
+  --text-secondary: #545b6b;
+  --text-tertiary: #868d9b;
+  --text-on-brand: #ffffff;
+
+  --shadow-card: 0 1px 0 rgba(16, 18, 24, 0.03), 0 12px 24px -18px rgba(16, 18, 24, 0.18);
+  --shadow-pop: 0 20px 45px -24px rgba(16, 18, 24, 0.28);
+
+  --scrollbar-thumb: #d7dae0;
+}
