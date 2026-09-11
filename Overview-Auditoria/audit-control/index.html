@@ -34,6 +34,10 @@
   <symbol id="icon-menu" viewBox="0 0 24 24"><path fill="currentColor" d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></symbol>
   <symbol id="icon-close" viewBox="0 0 24 24"><path fill="currentColor" d="m6.4 5 12.6 12.6-1.4 1.4L5 6.4 6.4 5Zm12.6 0L5.4 17.6 4 16.2 16.6 3.6 19 5Z"/></symbol>
   <symbol id="icon-refresh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 5V2L8 6l4 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7Z"/></symbol>
+  <symbol id="icon-refresh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 5V2L8 6l4 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7Z"/></symbol>
+  <symbol id="icon-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></symbol>
+  <symbol id="icon-user" viewBox="0 0 24 24"><path fill="currentColor" d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4.4 0-8 2.2-8 5v3h16v-3c0-2.8-3.6-5-8-5Z"/></symbol>
+  <symbol id="icon-id" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5h18v14H3V5Zm2 2v10h14V7H5Zm3 2h4v2H8V9Zm0 4h8v1.5H8V13Zm9-4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/></symbol>
 </svg>
 
 <div class="scrim" data-scrim></div>
@@ -134,6 +138,22 @@
             <span class="badge badge--outline" data-report-date>D-1 · 11/08/2026</span>
           </div>
         </div>
+         <form class="filter-bar" aria-label="Filtros do relatório" data-filter-form>
+          <div class="field">
+            <label class="field__label" for="filter-data-vg">DATA</label>
+            <input class="field__control" type="date" id="filter-data-vg" value="2026-08-11" />
+          </div>
+          <div class="field field--select">
+            <label class="field__label" for="filter-semana-vg">SEMANA</label>
+            <select class="field__control" id="filter-semana-vg">
+              <option>Semana 33 · 2026</option>
+              <option>Semana 32 · 2026</option>
+              <option>Semana 31 · 2026</option>
+            </select>
+          </div>
+          <div class="filter-summary">Visão: D-1 · Consolidado de todas as auditorias</div>
+          <div class="filter-summary" style="text-align:right;">Atualizado: <strong>11/08/2026</strong></div>
+        </form>
 
         <div class="section">
           <div class="section__header">
@@ -221,6 +241,91 @@
             </ul>
           </aside>
         </div>
+
+         <div class="section" style="margin-top: var(--space-6);">
+          <div class="section__header">
+            <h2 class="section__title">Concentração de desvios</h2>
+            <p class="section__desc" style="margin-top:0;">Top 3 por dimensão · priorização para atuação</p>
+          </div>
+
+          <div class="dimension-grid">
+
+            <article class="dimension-panel">
+              <div class="dimension-panel__head dimension-panel__head--danger">
+                <svg width="14" height="14"><use href="#icon-pin"></use></svg>
+                Destinos críticos
+              </div>
+              <ol class="rank-list">
+                <li class="rank-item">
+                  <span class="rank-item__badge">01</span>
+                  <span class="rank-item__label">LM Hub_RJ_São Gonçalo_02</span>
+                  <span class="rank-item__value">198</span>
+                </li>
+                <li class="rank-item">
+                  <span class="rank-item__badge">02</span>
+                  <span class="rank-item__label">LM Hub_DF_Brasília_Recanto_Emas</span>
+                  <span class="rank-item__value">178</span>
+                </li>
+                <li class="rank-item">
+                  <span class="rank-item__badge">03</span>
+                  <span class="rank-item__label">LM Hub_MG_Ipatinga</span>
+                  <span class="rank-item__value">78</span>
+                </li>
+              </ol>
+            </article>
+
+            <article class="dimension-panel">
+              <div class="dimension-panel__head dimension-panel__head--violet">
+                <svg width="14" height="14"><use href="#icon-user"></use></svg>
+                Packers · Humanos
+              </div>
+              <ol class="rank-list">
+                <li class="rank-item">
+                  <span class="rank-item__badge">01</span>
+                  <span class="rank-item__label">Regiane Caçanges Zeferinos</span>
+                  <span class="rank-item__value">8</span>
+                </li>
+                <li class="rank-item">
+                  <span class="rank-item__badge">02</span>
+                  <span class="rank-item__label">Fernanda Gonçalves Marinque Monteiro</span>
+                  <span class="rank-item__value">6</span>
+                </li>
+                <li class="rank-item">
+                  <span class="rank-item__badge">03</span>
+                  <span class="rank-item__label">Sarah da Silva Bercot da Silva Bercot</span>
+                  <span class="rank-item__value">3</span>
+                </li>
+              </ol>
+            </article>
+
+            <article class="dimension-panel">
+              <div class="dimension-panel__head dimension-panel__head--teal">
+                <svg width="14" height="14"><use href="#icon-id"></use></svg>
+                CHs · Chutes
+              </div>
+              <ol class="rank-list">
+                <li class="rank-item">
+                  <span class="rank-item__badge">01</span>
+                  <span class="rank-item__label">CH-467</span>
+                  <span class="rank-item__value">178</span>
+                </li>
+                <li class="rank-item">
+                  <span class="rank-item__badge">02</span>
+                  <span class="rank-item__label">CH-320</span>
+                  <span class="rank-item__value">78</span>
+                </li>
+                <li class="rank-item">
+                  <span class="rank-item__badge">03</span>
+                  <span class="rank-item__label">CH-405</span>
+                  <span class="rank-item__value">64</span>
+                </li>
+              </ol>
+            </article>
+
+          </div>
+        </div>
+
+        <p class="page-footnote">Central de Auditorias · SOC RJ2 · Gestão Operacional</p>
       </section>
 
       <!-- ============ Frentes ainda sem dados (template reutilizável) ======= -->
@@ -232,6 +337,24 @@
           </div>
           <span class="badge badge--outline">Estruturada</span>
         </div>
+         <form class="filter-bar" aria-label="Filtros do relatório" data-filter-form>
+          <div class="field">
+            <label class="field__label" for="filter-data-fm">DATA</label>
+            <input class="field__control" type="date" id="filter-data-fm" value="2026-08-11" />
+          </div>
+          <div class="field field--select">
+            <label class="field__label" for="filter-semana-fm">SEMANA</label>
+            <select class="field__control" id="filter-semana-fm">
+              <option>Semana 33 · 2026</option>
+              <option>Semana 32 · 2026</option>
+              <option>Semana 31 · 2026</option>
+            </select>
+          </div>
+          <div class="filter-summary">Visão: D-1 · First Mile</div>
+          <div class="filter-summary" style="text-align:right;">Atualizado: <strong>11/08/2026</strong></div>
+        </form>
+
+
         <div class="empty-state">
           <div class="empty-state__icon"><svg width="20" height="20"><use href="#icon-diamond"></use></svg></div>
           <p class="empty-state__title">Indicador pendente</p>
@@ -247,6 +370,24 @@
           </div>
           <span class="badge badge--outline">Estruturada</span>
         </div>
+         <form class="filter-bar" aria-label="Filtros do relatório" data-filter-form>
+          <div class="field">
+            <label class="field__label" for="filter-data-lh">DATA</label>
+            <input class="field__control" type="date" id="filter-data-lh" value="2026-08-11" />
+          </div>
+
+          <div class="field field--select">
+            <label class="field__label" for="filter-semana-lh">SEMANA</label>
+            <select class="field__control" id="filter-semana-lh">
+              <option>Semana 33 · 2026</option>
+              <option>Semana 32 · 2026</option>
+              <option>Semana 31 · 2026</option>
+            </select>
+          </div>
+          <div class="filter-summary">Visão: D-1 · Line Haul</div>
+          <div class="filter-summary" style="text-align:right;">Atualizado: <strong>11/08/2026</strong></div>
+        </form>
+
         <div class="empty-state">
           <div class="empty-state__icon"><svg width="20" height="20"><use href="#icon-shuffle"></use></svg></div>
           <p class="empty-state__title">Indicador pendente</p>
@@ -262,6 +403,22 @@
           </div>
           <span class="badge badge--outline">Estruturada</span>
         </div>
+         <form class="filter-bar" aria-label="Filtros do relatório" data-filter-form>
+          <div class="field">
+            <label class="field__label" for="filter-data-nc">DATA</label>
+            <input class="field__control" type="date" id="filter-data-nc" value="2026-08-11" />
+          </div>
+          <div class="field field--select">
+            <label class="field__label" for="filter-semana-nc">SEMANA</label>
+            <select class="field__control" id="filter-semana-nc">
+              <option>Semana 33 · 2026</option>
+              <option>Semana 32 · 2026</option>
+              <option>Semana 31 · 2026</option>
+            </select>
+          </div>
+          <div class="filter-summary">Visão: D-1 · Não Conformidades</div>
+          <div class="filter-summary" style="text-align:right;">Atualizado: <strong>11/08/2026</strong></div>
+        </form>
         <div class="empty-state">
           <div class="empty-state__icon"><svg width="20" height="20"><use href="#icon-alert"></use></svg></div>
           <p class="empty-state__title">Indicador pendente</p>
@@ -277,6 +434,23 @@
           </div>
           <span class="badge badge--outline">Estruturada</span>
         </div>
+         <form class="filter-bar" aria-label="Filtros do relatório" data-filter-form>
+          <div class="field">
+            <label class="field__label" for="filter-data-ob">DATA</label>
+            <input class="field__control" type="date" id="filter-data-ob" value="2026-08-11" />
+          </div>
+          <div class="field field--select">
+            <label class="field__label" for="filter-semana-ob">SEMANA</label>
+            <select class="field__control" id="filter-semana-ob">
+              <option>Semana 33 · 2026</option>
+              <option>Semana 32 · 2026</option>
+              <option>Semana 31 · 2026</option>
+            </select>
+          </div>
+          <div class="filter-summary">Visão: D-1 · Outbound</div>
+          <div class="filter-summary" style="text-align:right;">Atualizado: <strong>11/08/2026</strong></div>
+        </form>
+
         <div class="empty-state">
           <div class="empty-state__icon"><svg width="20" height="20"><use href="#icon-outbound"></use></svg></div>
           <p class="empty-state__title">Indicador pendente</p>

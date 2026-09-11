@@ -548,3 +548,90 @@
   border-radius: 50%;
   background: var(--status-success);
 }
+/* ---------------------------------------------------------------------- */
+/* Painéis de concentração de desvios (ranking por dimensão)               */
+/* ---------------------------------------------------------------------- */
+.dimension-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.dimension-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-card);
+}
+
+.dimension-panel__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.dimension-panel__head--danger { color: var(--status-danger); }
+.dimension-panel__head--violet { color: #b892ff; }
+.dimension-panel__head--teal   { color: #4fd1c5; }
+
+.rank-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.rank-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.rank-item__badge {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  background: var(--status-danger-bg);
+  color: var(--status-danger);
+  font-size: var(--fs-2xs);
+  font-weight: 700;
+}
+
+.rank-item__label {
+  flex: 1;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.rank-item__value {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--status-danger);
+}
+
+.page-footnote {
+  text-align: center;
+  margin-top: var(--space-6);
+  font-size: var(--fs-2xs);
+  color: var(--text-tertiary);
+}
+
+/* Responsivo: empilha as 3 colunas em telas menores */
+@media (max-width: 1180px) {
+  .dimension-grid {
+    grid-template-columns: 1fr;
+  }
+}
