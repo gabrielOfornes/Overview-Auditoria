@@ -72,6 +72,18 @@ const AuditData = (() => {
       footLeft: "Dados não informados na base atual",
       footRight: "",
     },
+    {
+      id: "sacas",
+      name: "Auditoria de Sacas",
+      scope: "Sacas · Conferência de lacres e volumes · Report D-1",
+      status: "pending",
+      statusLabel: "Estruturada",
+      icon: "icon-bag",
+      metricValue: "—",
+      metricLabel: "indicador pendente",
+      footLeft: "Dados não informados na base atual",
+      footRight: "",
+    },  
   ];
 
   /** Detalhe da Auditoria de TO */

@@ -38,6 +38,7 @@
   <symbol id="icon-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></symbol>
   <symbol id="icon-user" viewBox="0 0 24 24"><path fill="currentColor" d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4.4 0-8 2.2-8 5v3h16v-3c0-2.8-3.6-5-8-5Z"/></symbol>
   <symbol id="icon-id" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5h18v14H3V5Zm2 2v10h14V7H5Zm3 2h4v2H8V9Zm0 4h8v1.5H8V13Zm9-4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/></symbol>
+  <symbol id="icon-bag" viewBox="0 0 24 24"><path fill="currentColor" d="M7 8V6a5 5 0 0 1 10 0v2h2l1 12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2L5 8h2Zm2 0h6V6a3 3 0 0 0-6 0v2Z"/></symbol>
 </svg>
 
 <div class="scrim" data-scrim></div>
@@ -76,6 +77,10 @@
         <li><button class="nav-link" data-nav="outbound" type="button">
           <span class="nav-link__icon"><svg width="16" height="16"><use href="#icon-outbound"></use></svg></span>
           Outbound
+        </button></li>
+         <li><button class="nav-link" data-nav="sacas" type="button">
+          <span class="nav-link__icon"><svg width="16" height="16"><use href="#icon-bag"></use></svg></span>
+          Auditoria de Sacas
         </button></li>
       </ul>
     </nav>
@@ -457,7 +462,38 @@
           <p class="empty-state__desc">Esta auditoria está estruturada para receber dados, mas nenhum indicador foi informado na base atual.</p>
         </div>
       </section>
+       <section class="view" id="view-sacas" data-view="sacas" aria-labelledby="sacas-title">
+        <div class="page-head">
+          <div>
+            <h1 class="page-head__title" id="sacas-title">Auditoria de Sacas</h1>
+            <p class="page-head__subtitle">Sacas · Conferência de lacres e volumes · Report D-1</p>
+          </div>
+          <span class="badge badge--outline">Estruturada</span>
+        </div>
 
+        <form class="filter-bar" aria-label="Filtros do relatório" data-filter-form>
+          <div class="field">
+            <label class="field__label" for="filter-data-sc">DATA</label>
+            <input class="field__control" type="date" id="filter-data-sc" value="2026-08-11" />
+          </div>
+          <div class="field field--select">
+            <label class="field__label" for="filter-semana-sc">SEMANA</label>
+            <select class="field__control" id="filter-semana-sc">
+              <option>Semana 33 · 2026</option>
+              <option>Semana 32 · 2026</option>
+              <option>Semana 31 · 2026</option>
+            </select>
+          </div>
+          <div class="filter-summary">Visão: D-1 · Sacas</div>
+          <div class="filter-summary" style="text-align:right;">Atualizado: <strong>11/08/2026</strong></div>
+        </form>
+
+        <div class="empty-state">
+          <div class="empty-state__icon"><svg width="20" height="20"><use href="#icon-bag"></use></svg></div>
+          <p class="empty-state__title">Indicador pendente</p>
+          <p class="empty-state__desc">Esta auditoria está estruturada para receber dados, mas nenhum indicador foi informado na base atual.</p>
+        </div>
+      </section>
     </main>
   </div>
 </div>

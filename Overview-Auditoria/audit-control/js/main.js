@@ -17,6 +17,7 @@
     "line-haul": "Line Haul",
     nc: "NC",
     outbound: "Outbound",
+    sacas: "Auditoria de Sacas",
   };
 
   const views = document.querySelectorAll("[data-view]");
